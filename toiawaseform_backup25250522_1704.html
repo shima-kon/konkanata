@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天音かなた非公式ファンサイト - お問い合わせフォーム</title>
+    <link rel="stylesheet" href="kanatacss/ress.css">
+    <link rel="stylesheet" href="kanatacss/kanatacss.css">
+    <form action="toiawaseformkana.php" method="POST">
+
+    <script src="kanatajs/kanataJavaScriptsub.js" defer></script>
+    <link rel="icon" type="image/png" href="kanatafavicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="kanatafavicon/favicon.svg" />
+    <link rel="shortcut icon" href="kanatafavicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="kanatafavicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="kanatafavicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <header class="header">
+        
+        <!-- logo -->
+         <div class="topdiv">
+            <div class="title_div">
+                <h1 class="header_title"><a href="index.html"><img class="hikousikilogo" src="kanataimg/fansaitokanatalogoth.png" alt="非公式ロゴ"></a></h1>
+            </div>
+            <nav>
+                <ul class="headerul">
+                    <li class="navli"><a class="nav_btn" href="index.html">TOP</a></li>
+                    <li class="navli"><a class="nav_btn" href="kiseki.html">軌跡</a></li>
+                    <li class="navli"><a class="nav_btn" id="navtop" href="toiawaseform.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <button class="menu-btn" id="menuToggle">☰</button>
+        <div class="topdiv" id="slideMenu">
+            <div class="title_div">
+                <h1 class="header_title">
+                    <img class="hikousikilogo" src="kanataimg/fansaitokanatalogoth.png" alt="非公式ロゴ">
+                </h1>
+            </div>
+            <nav>
+                <ul class="headerul">
+                    <li class="navli"><a class="nav_btn" href="index.html">TOP</a></li>
+                    <li class="navli"><a class="nav_btn" href="kiseki.html">軌跡</a></li>
+                    <li class="navli"><a class="nav_btn" id="navtop" href="toiawaseform.html">お問い合わせ</a></li>
+                    <li id="puraibasi" class="navli"><a class="nav_btn" href="ppricy.html">プライバシーポリシー</a></li>
+    
+                </ul>
+            </nav>
+        </div>
+
+        
+    </header>
+        
+
+  <section class="otoiawase">
+    <div class="yokohaba">
+      <div class="container">
+        <div class="breadcrumb-wrapper">
+          <ul class="breadcrumb">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="toiawaseform.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="title" id="subtitle">
+        <img class="titlelogo" src="kanataimg/otoiawaselogotw.png" alt="お問い合わせフォーム">
+      </h2>
+
+      <form class="Form" method="POST" action="toiawaseformkana.php">
+        <div class="toiawasepdiv">
+          <p class="toiawasep">当サイトに関するお問い合わせについては、
+            <span class="torikesisen">下記のお問い合わせフォームにてお願いいたします。</span></p>
+          <p class="toiawasetwp">※現在フォームは開発中です。お急ぎの場合は
+            <a class="sitasen" href="https://x.com/Koncon_1135" target="_blank">管理人XのDM</a>をご利用ください。
+          </p>
+        </div>
+
+        <div class="Form-Item">
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>氏名</p>
+          <input type="text" name="name" class="Form-Item-Input" placeholder="例）田中太郎" required>
+        </div>
+
+        <div class="Form-Item">
+          <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>メールアドレス</p>
+          <input type="email" name="email" class="Form-Item-Input" placeholder="例）example@gmail.com" required>
+        </div>
+
+        <div class="Form-Item">
+          <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>お問い合わせ内容</p>
+          <textarea name="message" class="Form-Item-Textarea" required></textarea>
+        </div>
+
+        <!-- ✅ CSRFトークンを送信 -->
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token, ENT_QUOTES, 'UTF-8') ?>">
+
+        <input type="submit" class="Form-Btn" value="送信する">
+      </form>
+    </div>
+  </section>
+
+    
+
+
+<footer class="subfooter">
+    <div class="yokohaba">
+        <div class="footerdiv">
+            <div class="footertwodiv">
+                <img class="footerlogo" src="kanataimg/kanalogof.png" alt="非公式ロゴ">
+                <p class="footerp">※当サイトは、ホロライブプロダクション所属のVtuber天音かなたさんを応援する非公式サイトです。</p>
+                <p class="footerp">※当サイト及び製作者は、カバー株式会社・ホロライブプロダクションとは一切関係ございません。</p>
+                <p class="footerp">※当サイトにて掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。</p>
+                <p class="footerp">※可能な限り正確な情報を掲載するよう努めておりますが、誤った情報が⼊り込んだり、情報が古くなっている可能性がございます。</p>
+                <div id="consns" class="sitasen"><a id="footera" href="https://x.com/Koncon_1135" target="_blank" rel="noopener noreferrer"><p>@Koncon_1135</p></a></div>
+            </div>
+            <div class="footerthdiv">
+                <h4 class="footermenu">Menu</h4>
+                <div>
+                    <div>
+                        <p class="menup"><a id="footera" class="sitasen" href="index.html">TOP</a></p>
+                        <p class="menup"><a id="footera" class="sitasen" href="kiseki.html">軌跡</a></p>
+                        <p class="menup"><a id="footera" class="sitasen" href="ppricy.html">プライバシーポリシー</a></p>
+                        <p class="menup"><a id="footera" class="sitasen" href="toiawaseform.html">お問い合わせ</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

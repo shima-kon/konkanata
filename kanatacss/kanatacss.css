@@ -1,0 +1,2867 @@
+@charset "UTF-8";e
+
+
+
+/*全体*/
+html, body {
+  overflow-x: hidden;
+}
+body{
+  width: 100%;
+}
+img {max-width: 100%;}
+li {list-style: none;}
+.yokohaba{
+  width: 88%;
+  margin: 0 auto;
+  
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
+.sitasen{
+  text-decoration: underline;
+}
+.torikesisen{
+  text-decoration: line-through;
+}
+iframe{
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/*index*/
+
+
+/*header*/
+
+.header{
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.topdiv{
+    position: fixed;
+    height: 10vh;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    background-color: white;
+    padding: 0 4%;
+    z-index: 2000;
+}
+nav{
+  margin: auto 0;
+}
+#puraibasi{
+  display: none;
+
+}
+.headerul{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+  /*
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 500;
+  font-style: normal;
+  */
+  display: flex;
+  gap:26px
+    
+}
+.headerul li a{
+    text-decoration: none;
+    color: #509BEA;
+    font-size:1.6rem;
+}
+
+
+#navtop::after{
+  transform: scale(1, 1);
+}
+
+.nav_btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border-bottom:2px;
+  color:#509BEA;
+}
+.navli a {
+  position: relative;
+  
+}
+
+.navli a::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url("../kanataimg/sent.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  bottom: -22px;
+  transform: scale(0, 1);
+  transition: transform 0.7s;
+  transform-origin: center;
+}
+
+a:hover::after {
+  transform: scale(1, 1)
+}
+
+
+
+
+
+.header_title {
+  text-align: center;
+  align-items: center;
+  
+}
+.title_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+.hikousikilogo{
+  padding-left: 0%;
+  width: auto;
+  height: 8vh;
+  margin: auto;
+  display: block;
+}
+/*headersukuro-ru
+.header--sticky {
+  position: fixed;
+  top: -1.5vh;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  width: 98.5%;
+  height: 10vh;
+  visibility: visible;
+  transform: 0.3s;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+*/
+
+
+/*owari headers*/
+
+
+
+
+
+
+/*injike-ta*/
+
+
+  /* ↓ スライドの外枠 */
+  .slide-wrapper {
+    height: 90vh;
+    position: relative;
+    overflow: hidden; /* はみ出したスライドを隠す */
+    margin-top: 10vh;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
+  
+  /*  ↓ スライド（コンテンツ） */
+  .slide { /*スライド全体 */
+    width: 300%;
+    height: 100%;
+    display: flex;
+    transition: all 0.7s;
+  }
+  .slide div { /* スライド */
+    width: 33.33%;
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide1 { /* スライドさせるために必要なクラス */
+    transform: translateX(0);
+  }
+  .slide2 { /* スライドさせるために必要なクラス */
+    transform: translateX(-33.33%);
+  }
+  .slide3 { /* スライドさせるために必要なクラス */
+    transform: translateX(-66.66%);
+  }
+  .slide div:nth-of-type(1){ /* 背景画像 */
+    background-image: url("../kanataimg/GpEIRt0bgAAClnA.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  
+  }
+  .slide div:nth-of-type(2){ /* 背景画像 */
+    background-image: url("../kanataimg/maxresdefault (1).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .slide div:nth-of-type(3){ /* 背景画像 */
+    background-image: url("../kanataimg/FHnjdeoaIAk-jGf.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* ↓ 左右のボタン */
+  .next {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 10px;
+    bottom: 50%;
+    z-index: 10;
+    cursor: pointer;
+    border-top: solid 3px #000;
+    border-right: solid 3px #000;
+    -webkit-transform: rotate(45deg) translateY(50%);
+    transform: rotate(45deg) translateY(50%);
+  }
+  .prev {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 25px;
+    bottom: 50%;
+    z-index: 10;
+    cursor: pointer;
+    border-top: solid 3px #000;
+    border-right: solid 3px #000;
+    -webkit-transform: rotate(-135deg) translateY(-50%);
+    transform: rotate(-135deg) translateY(-50%);
+  }
+  /* ↓ インジケーター */
+  .indicator {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    column-gap: 18px;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+  }
+  .indicator li {
+    width: 24px;
+    height: 24px;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .indicator li:first-of-type {
+    background-image: url("../kanataimg/innjike-ta.png");
+  }
+  .indicator li:nth-of-type(2n) {
+    background-image: url("../kanataimg/innjike-tatw.png");
+  }
+  .indicator li:last-of-type {
+    background-image: url("../kanataimg/innjike-tatw.png");
+  }
+  
+
+
+/*main*/
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+ 
+}
+.titlelogo{
+  height:96px;
+  width: auto;
+}
+section{
+  padding-bottom: 60px;
+}
+/*Profile*/
+
+.helloaisatu{
+  text-align: left;
+    font-size: 2rem;
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color:#509BEA;
+    margin-bottom: -12px;
+}
+
+
+.profilename{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 3.8rem;
+  color: #509BEA; 
+  padding-bottom: 0;
+  margin: 0;
+  text-align: center;
+}
+.name{
+  margin-bottom: 28px;
+}
+.kana{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.1rem;
+  color: #76c0ea;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.profile{
+    padding-top: 20vh;
+    background-image: url(../kanataimg/haikeikana.png);
+    background-repeat: repeat-y;
+    background-size: contain;
+    object-fit: cover;
+}
+
+.profilediv{
+    width:auto;
+    display: flex;
+    justify-content: space-between;
+  gap: 2%;
+    margin:0 auto;
+    opacity: 0;
+}
+
+.profileimg{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.profileone{
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction:column;
+}
+#kanadiv{
+  display: none;
+}
+.rinkdiv{
+  margin-top: 28px;
+  width: 100%;
+}
+.mainrink{
+  text-align: center;
+}
+.sns{
+  display: grid;
+  padding-top: 8px;
+}
+.snsth{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+#snsp{
+  width: 100%;
+  z-index: 1000;
+  position: relative;
+}
+#snsptw{
+  width: 100%;
+  z-index: 1000;
+  position: relative;
+}
+#snspth{
+  width: 100%;
+  z-index: 1000;
+  position: relative;
+}
+.btn a {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #fff;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 700;
+  color: #509BEA;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  transition: .2s;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 6px auto;
+}
+.btn a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 25px;
+  width: 6px;
+  height: 6px;
+  margin: auto;
+  border-top: 2px solid #509BEA;
+  border-right: 2px solid #509BEA;
+  transform: rotate(45deg);
+  transition: .2s;
+  box-sizing: border-box;
+}
+
+/* スライドする背景色のスタイル */
+
+.btn-slide-horizontal a {
+  border: 2px solid #509BEA;
+  z-index: 1;
+}
+
+.btn-slide-horizontal a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #509BEA;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+  z-index: -1;
+  pointer-events: none; /* ← これが重要！ */
+
+}
+
+/* ホバー時のスタイル */
+.btn-slide-horizontal a:hover {
+  color: #fff;
+}
+.btn-slide-horizontal a:hover::before {
+  transform-origin: left top;
+  transform: scaleX(1);
+  display: block; 
+}
+.btn-slide-horizontal a:hover::after {
+  border-color: #fff;
+  
+}
+
+
+.profileimgtwo{
+    width:50%;
+}
+.profiletwoimg{
+  background-color: #fff;
+}
+#hei{
+
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 2px;
+  text-align: left;
+}
+.profilepdiv{
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+.profilep{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 19px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: justify;
+}
+/*hyou*/
+.teble{
+  display: flex;
+  gap:2%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+table{border-collapse:collapse;}
+tr{border-bottom: solid 1px #76c0ea;              /* 枠線指定 */}
+th{
+  color: #509BEA;
+  text-align: left;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 15px;
+
+}
+td{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 15px;
+  color: #333;
+}
+th,td {
+  width:50%;
+  padding: 10px;      /* 余白指定 */
+}
+.tabletw{
+  margin-left: 5%;
+}
+
+/*
+GALLERY
+================================================ */
+
+.profileimgone {
+  
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 500;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.profileimgone::after
+ {
+    display: block;
+    content: '';
+    width: 100%;
+  height: 120%;
+    z-index: -100;
+    background-image: url(../kanataimg/wakuimgfi.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0.2rem;
+    position: absolute;
+}
+
+.profileul {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: repeat(4,24%);
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.profileul img {
+    aspect-ratio: 3/4;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    cursor: pointer;
+    
+}
+
+
+
+/*MIRYOKU*/
+.miryoku{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  position:  relative;        /* 位置指定 */
+  z-index: auto;
+  padding-top:  60px;
+  padding-bottom: 120px;
+}
+.image-container {
+  width: 80%;
+  max-height:4vw;
+  overflow:hidden;
+  border: 2px dotted #49c9d4;
+}
+.charmtitle{
+  margin-bottom: 50px;
+}
+.charmtitlediv{
+  opacity: 0;
+}
+.charmdiv{
+  display: flex;
+  justify-content: space-between;
+  gap:2%;
+  opacity: 0;
+}
+
+.charm {
+  position: relative;
+  text-align: left;
+  color:#509BEA;
+  font-family: "M PLUS Rounded 1c","IBM Plex Sans JP", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  letter-spacing: 0.01em;
+  border-bottom: 2px solid #509BEA;
+  margin-bottom: 20px;
+  /*
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  */
+  padding-top: 24px;
+}
+.charmdivp{
+  width: 68%;
+}
+
+.charmdivimg{
+
+  position: relative; /* 親要素の位置基準を確保 */
+  display: inline-block; /* 必要に応じて */}
+
+
+
+
+
+  
+.charmdivimg::before {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* サイズ計算をborder込みに */
+  border: 2px solid #509BEA;
+  background-color: #509BEA;
+  border-radius: 2%;
+  background-clip: padding-box; /* 背景色がボーダーにはみ出ないように */
+  z-index: -1;
+  }
+
+.charmimg{
+  width: 533px;
+  height: 300px;
+  max-width: 100%;
+  border-radius: 2%;
+ 
+}
+
+.charmdougadiv{
+  display: flex;
+  gap:2%;
+  justify-content: space-between;
+  flex-wrap:nowrap;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.douga{
+  opacity: 0;
+ aspect-ratio: 16 / 9;
+ width: 100%;
+ height: auto;
+ flex: 1 1 30%;
+ min-width: 200px;
+}
+
+
+
+/*
+.charmdeco{
+  position: absolute;
+  font-style: italic;
+  text-align: left top;
+  color: #509BEA;
+  font-size: 38px;
+  transform: rotate( -25deg );
+  font-family: "Rouge Script", serif;
+  font-weight: 400;
+  padding-top: -30px;
+  padding-bottom: 80px;
+}
+  */
+.charmp{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 19px;
+  color: #333;
+}
+
+
+/*楽曲*/
+.gakkyoku{
+  
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+
+figure{
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+.album{
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+
+}
+.gakkyokutitle{
+
+  text-align: left;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #333;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.kyoku{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #333;
+  letter-spacing: 0.04em;
+  border: solid 2px #333;
+  background-color: #ebf5ff;
+  width: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 28px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 9999px;
+}
+.ver{
+  font-size: 0.2rem;
+}
+
+
+.card-box:hover{
+  transform: translateY(-8px);
+}
+
+
+
+
+.card-box .gakkyokudiv .gakkyokuimg {
+    vertical-align:top;
+  }
+  .card-box .gakkyokudiv .gakkyokutitle {
+    margin:0px 0 0;}
+  .card-box .gakkyokudiv .gakkyokuimg {
+    overflow:hidden;
+}
+.card-box .gakkyokudiv .gakkyokuimg {
+    transition: transform 0.4s ease;
+    border-radius: 2%;
+    }
+.card-box .gakkyokudiv:hover .gakkyokuimg {
+      transform:scale(1.1);
+    }
+.gakkyokutime{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 0.9rem;
+ 
+}
+.timediv{
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  gap:4px;
+}
+.timesen{
+  width: 20px;
+  height: 1px;
+  background-color: black;
+}
+.timediv{
+  display: none;
+}
+
+
+
+.gakkyokutopdiv {
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  width: 98%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.card-box {
+  width: 23.5%;
+  min-width: 200px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform: translateY(0);
+  opacity: 0;
+  flex-grow: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gakkyokudiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 14px;
+  background-color: #fff;
+  border-radius: 8px; /* 角丸にしたいなら追加 */
+}
+
+.gakkyokuimg {
+  width: 100%;
+  height: auto;
+  border-radius: 6px; /* 画像に角丸したい場合 */
+}
+
+
+
+
+
+/*IBENT*/
+.ibent{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.ibenttopdiv {
+  display: flex;
+  gap:2%;
+  justify-content: space-between;
+  flex-wrap:nowrap;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.ibentfigure{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+
+.ibenttitle{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+  text-align: left;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #333;
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+
+.ibent-box {
+width: 100%;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex; 
+  flex-direction: column; 
+}
+
+
+.ibent-box:hover{
+  animation-duration: 800s;
+  transform: translateY(-8px);
+  /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);*/
+  -webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+  
+
+.ibent-box .ibentdiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+  padding:14px;
+  background-color:#fff;
+  border-radius: 8px; /* 角丸*/
+}
+
+.ibent-box .ibentdiv .ibenttitle {
+  margin: 10px 0 0;
+}
+.ibent-box .ibentdiv .ibentimg {
+  vertical-align:top;
+  overflow:hidden;
+  transition: transform 0.4s ease;
+  border-radius: 2%;
+}
+ 
+.ibent-box .ibentdiv:hover .ibentimg {
+  transform:scale(1.1);
+}
+
+/*rink*/
+.rink{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  /*background-color: #e8f2fc;*/
+  padding-top: 60px;
+  padding-bottom: 240px;
+  display: none;
+}
+
+
+
+
+
+/*kousinrireki*/
+.kousin{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 240px;
+}
+.kousindiv{
+  margin: 0 auto;
+  width: 88%;
+  opacity: 0;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.newsdt{
+  display: flex;
+  gap: 10%;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  justify-content: left;
+  padding-left: 9%;
+  padding-right: 9%;
+  color: #333;
+}
+.rirekispan{
+  opacity: 0;
+}
+
+/*footer*/
+footer{
+  background-color: #313131;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  position: relative;  /* または absolute/fixed/sticky でも可 */
+  z-index: 1000;       /* 数字が大きいほど上に表示される */
+}
+
+.footerdiv{
+  display: flex;
+  justify-content: space-around;
+  gap: 8%;
+
+}
+.footertwodiv{
+  width: auto;
+}
+.footerthdiv{
+  width: auto;
+  
+}
+.footermenu{
+
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.footerfodiv{
+  margin-top: 2px;
+  display: flex;
+  gap:8%;
+}
+
+.footerlogo{
+  height:12vh;
+  width:auto;
+  margin-bottom: 12px;
+}
+#topmenu{
+  margin-left: 16px;
+}
+#footera{
+  color: #fff;
+  font-size: 16px;
+}
+.footerp{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: 4px;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+.footermenudiv{
+  margin-left: 10px;
+}
+#consns{
+  margin-top: 12px;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+}
+.menup{
+  margin-top: 4px;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 17px;
+}
+
+
+/*sub*/
+/*pankuzurisuto*/
+.container {
+  display: flex;
+  justify-content: left;
+}
+.breadcrumb-wrapper {
+  border-radius: 20px;
+  max-width: 100%;
+  overflow-x: auto; /* モバイルで横スクロール防止 */
+}
+.breadcrumb {
+  
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 10px 20px;
+  background-color: #def1fd;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px #ecf7fd;
+  font-size: 14px;
+
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  color: #509BEA;
+}
+
+.breadcrumb li + li::before {
+  content: "▶";
+  margin: 0 10px;
+  color: #99d8ff;
+  font-size: 12px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #509BEA;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #1d8aff;
+}
+
+
+
+/*お問い合わせ*/
+.otoiawase{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  padding-top: 100px;
+  padding-bottom: 120px;
+
+}
+.toiawasetopdiv{
+  opacity: 0;
+  transform: translateY(50px);
+}
+.toiawasepdiv{
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.Form {
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2vh;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.toiawasep{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  color: #333;
+
+  text-align: center;
+  margin-bottom: 8px;
+  
+}
+.toiawasetwp{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .Form {
+    margin-top: 40px;
+  }
+}
+.Form-Item {
+  
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+  }
+}
+.Form-Item:nth-child(5) {
+  border-bottom: 1px solid #ddd;
+}
+.Form-Item-Label {
+  width: 100%;
+  max-width: 248px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+}
+.Form-Item-Label.isMsg {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label.isMsg {
+    margin-top: 0;
+  }
+}
+.Form-Item-Label-Required {
+  border-radius: 6px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 48px;
+  display: inline-block;
+  text-align: center;
+  background: #509BEA;
+  color: #fff;
+  font-size: 14px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Label-Required {
+    border-radius: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 32px;
+    font-size: 10px;
+  }
+}
+.Form-Item-Input {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 48px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Input {
+    margin-left: 0;
+    margin-top: 18px;
+    height: 40px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Item-Textarea {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 216px;
+  flex: 1;
+  width: 100%;
+  max-width: 410px;
+  background: #eaedf2;
+  font-size: 18px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Item-Textarea {
+    margin-top: 18px;
+    margin-left: 0;
+    height: 200px;
+    flex: inherit;
+    font-size: 15px;
+  }
+}
+.Form-Btn {
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background: #509BEA;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 480px) {
+  .Form-Btn {
+    margin-top: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 160px;
+    font-size: 16px;
+  }
+}
+
+/*プライバシーポリシー*/
+
+/*header*/
+
+
+/*main*/
+#subtitle{
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 2px;
+  margin-top: 60px;
+  opacity: 0; /* 初期状態を透明に */
+  transform: translateY(-50px); 
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.subtitle.show {
+  opacity: 1;
+  transform: translateY(0);
+  
+}
+.box {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.puraibasi{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+
+}
+.praibasitopdiv {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.praibasitopdiv.show {
+  opacity: 1;
+
+}
+
+.praibasidiv{
+  width: 100%;
+  margin: 30px auto 50px auto;
+  margin-top:20px;
+  margin-bottom: 50px; 
+}
+
+.praibasih3{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.7rem;
+  border-bottom: 2px solid #509BEA;
+  padding-bottom: 2px;
+  margin-bottom: 20px;
+}
+.praibasip{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:#333;
+  font-size: 17px;
+  width: 96%;
+  margin: 0 auto;
+}
+.praibasiul{
+  margin: 12px 0;
+  margin-left: 2%;
+}
+
+.praibasili{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #333;
+  font-size: 17px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+
+
+/* kiseki */
+.kiseki{
+  background-image: url(../kanataimg/haikeikana.png);
+  background-repeat: repeat;
+  background-size: 100% auto;
+  padding-top: 100px;
+  padding-bottom: 120px;
+
+  
+}
+
+.kisekidiv{
+  display: flex;
+  justify-content: space-between;
+  gap: 4%;
+}
+.kisekidiv div p{
+  color: #333;
+}
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding: 50px auto;
+  opacity: 0;
+}
+
+.timeline-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 20px;
+  background-color: #e3f4ff;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 95%;
+  margin: 28px 0 0 auto;
+}
+
+.timeline-item:hover {
+  background-color: #f2faff;
+}
+
+
+.timeline-item h3 {
+  margin: 0;
+  font-size: 1.6em;
+  color: #509BEA;
+  font-family:"M PLUS Rounded 1c", "IBM Plex Sans JP", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+.timeline-item p {
+  font-size: 1.1em;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  margin-top: 8px;
+}
+.markerdiv{
+  left: -5%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+.timeline-marker {
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: #509BEA;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+.tatesen-marker{
+  top: 20px;
+  width: 3px;
+  height: 440px;
+  background-color: #509BEA;
+}
+
+.saigotatesen-marker{
+  top: 20px;
+  width: 3px;
+  height: 200px;
+  background-color: #509BEA;
+}
+
+
+.details {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #e3f4ff;
+  border-left: 4px solid #509BEA;
+  font-size: 0.9em;
+  color: #444;
+  display: none;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+
+}
+.tensyasin{
+  width: 326px;
+  height: auto;
+  border-radius: 2%;
+}
+.samune{
+  width: 300px;
+  height: auto;
+  border-radius: 2%;
+}
+.twitter-tweet{
+  width: 326px;
+  height: auto;
+}
+
+.details p {
+  font-size: 16px;
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 6px 0;
+  color: #333;
+}
+
+.timeline-item:active .details {
+  opacity: 1;
+}
+
+
+
+/* 共通デザイン */
+
+
+/* ハンバーガーメニュー（モバイル用*/
+.menu-btn {
+  display: none;
+
+  position: fixed;
+  right: 0;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+
+iframe{
+
+  position: relative;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+  body{
+    width: 100%;
+    margin: 0;
+  
+  }
+  img {
+    width: 100% ;
+    }
+  .yokohaba{
+    width: 90%;}
+  .topdiv{
+     width:100%;
+
+  }
+  .titlelogo{
+    height:auto;
+    width: auto;
+  }
+.title{
+
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+#subtitle{
+  margin-top: 0;
+
+}
+
+
+
+.slideMenu{
+  opacity: 0;
+}
+  .slide-wrapper {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+  .slide div:nth-of-type(1){ /* 背景画像 */
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+  .slide div:nth-of-type(2){ /* 背景画像 */
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+  .slide div:nth-of-type(3){ /* 背景画像 */
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+
+  .header_title {
+   margin-bottom: 12px;
+    
+  }
+
+  .hikousikilogo{
+    padding-left: 0;
+    width: auto;
+    height: 12vh;
+    margin-bottom: 20px;
+  }
+  .menu-btn {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+.topdiv {
+    position: fixed;
+    overflow:hidden;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 60%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    background-color: #fff;
+    padding-top: 60px;
+    margin: 0 0 0 auto;
+}
+
+.topdiv.open {
+    transform: translateX(0);
+    height: 100vh;
+    width: 60%;
+    overflow: hidden;
+    margin: 0 0 0 auto;
+}
+
+.headerul{
+  gap:18px ;
+  flex-direction: column;
+}
+
+.navli {
+    margin: 0 auto;
+}
+#puraibasi{
+  display: block !important;
+}
+.navli .nav_btn {
+  font-size: 28px;
+  position: relative; /* ::after が absolute なので、これを指定しないと期待通りに動かないことがあります */
+}
+/*プロフィール*/
+.profile{
+  padding-top: 10vh;
+    background-size: auto;
+}
+.helloaisatu{
+
+  margin-bottom: -18px;
+  font-size: 22px;
+}
+#hei{display: block;}
+.waku{width: 100%;}
+.profilename{
+  font-size: 42px;
+}
+#namaeone{
+  text-align: center;
+}
+#namaetw{
+  text-align: center;
+}
+.name{
+  margin-bottom: 10px;
+}
+.kana{
+  font-size: 1rem;
+  margin-top: -6px;
+}
+#kanadiv{
+  display: block;
+  margin-top: 8px;
+}
+#kanadivtw{
+  display: none;
+}
+
+  .profilediv{
+    display: flex;
+    flex-wrap: column;
+    display: block;
+    width: 100%;
+
+    gap: 2%;
+    margin: 0;
+  }
+  .profileone{
+    width: 100%;
+    margin: 0 auto;
+    order: 2;
+    display: block;
+  }
+
+.profileimgone::after
+ {
+  width: 100%;
+  height: 100%;
+
+}
+.profilep{
+
+  font-weight: 500;
+  font-size: 17px;
+
+  transform:rotateZ(0.03deg);
+
+
+}
+
+.profileimg{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.rinkdiv{
+  margin-top: 0;
+  display: none;
+}
+.btn a {
+  width: 120px;
+
+}
+.profileimgtwo{
+    width:100%;
+    order: 1;
+}
+.tabletw{
+  margin-left: 0px;
+}
+
+th,td {
+  padding: 4px;      /* 余白指定 */
+}
+.profileul {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(4,25%);
+  list-style: none;
+  padding: 0;
+}
+.image-container {
+  width: auto;
+  max-height:14vw;
+  overflow:hidden;
+  margin: 6%;
+}
+
+.profilejyun{
+  display:grid;
+}
+
+.profileisyoudiv{
+  grid-row:1/2;
+  margin-top: 12px;
+}
+
+.teble{
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: space-between;
+}
+.teble table{
+  width: 48%;
+}
+
+th{
+  font-weight: 600;
+  font-style: normal;
+  font-size: 15px;
+
+}
+td{
+  font-weight: 500;
+  font-size: 15px;
+}
+
+
+/*魅力*/
+.miryoku{
+  
+  background-size: auto;
+  padding-bottom: 94px;
+}
+.charmdiv{
+  display: block;
+}
+.charm {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.charmdivp{
+  width: 100%;
+}
+.charmdougadiv{
+  grid-template-columns: repeat(1, 1fr);
+
+}
+.charmtitle{
+  margin-bottom: 40px;
+}
+
+.douga{
+  margin-bottom: 16px;
+  width: 32%;
+ 
+ }
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+  .charmp{
+
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0;
+    transform:rotateZ(0.03deg);
+
+  }
+
+.charmimg{
+  width: 90%;
+  height: 90%;
+}
+
+.charmdivimg {
+margin: 16px auto 0 auto;
+}
+.charmdivimg::before {
+
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  right: 0px;
+  width: 90%;
+  height: 100%;
+  box-sizing: border-box; /* サイズ計算をborder込みに */
+  border: 2px solid #509BEA;
+  background-color: #509BEA;
+  border-radius: 2%;
+  background-clip: padding-box; /* 背景色がボーダーにはみ出ないように */
+  z-index: -1;
+  }
+.charmdougadiv{
+display: flex;
+flex-wrap : wrap;
+justify-content:space-between;
+margin: 0 auto;
+}
+
+
+
+/*楽曲*/
+figure{
+  width: auto;
+  height: auto;
+}
+.gakkyoku{
+  padding-top: 0;
+  background-size: auto;
+}
+
+.gakkyokutopdiv{
+  justify-content: space-between;
+  flex-wrap: wrap;/*必須*/
+  margin: 0 auto;
+}
+.card-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 49%;
+}
+.card-box .gakkyokudiv {
+  padding:12px;
+}
+
+.kyoku{
+  font-weight: 600;
+  font-size: 0.65rem;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-align:center;
+  height:26px;
+  line-height:26px;
+
+}
+.gakkyokutitle{
+
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+/*イベント*/
+.ibent{
+  padding-top: 0;
+  padding-bottom: 120px;
+    background-size: auto;
+  }
+  .ibenttopdiv {
+    display: block;
+  }
+  
+  .ibenttopdiv{
+  grid-template-columns: 1fr  1fr;
+
+  padding-top: 10px;
+  overflow:hidden;
+  }
+  .ibent-box {
+    width:100%;
+    padding-bottom: 24px;
+    margin: 0 auto;
+  }
+  .ibent-box .ibentdiv {
+    padding:14px;
+    width: 98%;
+    margin: 0 auto;
+  }
+  .ibenttitle{
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    transform:rotateZ(0.03deg);
+
+    text-align: center;
+  }
+.ibentfigure{
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+/*rink*/
+.rink{
+
+  padding-top: 0;
+  padding-bottom: 104px;
+  display: block;
+}
+.snstw{
+  opacity: 0;
+  display: block;
+}
+.btn a {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.btn-slide-horizontal{
+  margin-top: 8px;
+}
+.snsdiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+
+/*更新履歴*/
+.kousin{
+  padding-top: 0;
+  padding-bottom: 120px;
+  background-size: auto;
+}
+  .kousindiv{
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .newsdt{
+    gap: 4%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 32px;
+    padding-right: 0;}
+/*フッター*/
+footer{
+
+  padding-top: 30px;
+  padding-bottom: 20px;
+  position: relative;  /* または absolute/fixed/sticky でも可 */
+  z-index: 1000;       /* 数字が大きいほど上に表示される */
+}
+.footerlogo{
+  height:14vh;
+  display: block;
+  width:auto;
+  margin: 18px auto;
+
+}
+  .footerdiv{
+    display: block;
+    display: flex;
+  flex-direction: column;
+    gap: 0%;
+  }
+  .footeronediv{
+    display: flex;
+  }
+
+  .footerfodiv{
+    margin-top: 2px;
+    display: block;
+    gap:8%;
+  }
+  /*
+  .footerspan{
+    display: none;
+  }
+    */
+
+  .footertwodiv{
+    order: 2;
+    width: 100%;
+  }
+  .footerthdiv{
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .footerp{
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 6px;
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+  .footermenu{
+
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    margin-bottom: 6px;
+    transform:rotateZ(0.03deg);
+  }
+  .menup{
+    margin-top: 8px;
+
+    padding-bottom: 2px;
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    transform:rotateZ(0.03deg);
+    border-bottom:1px solid #fff; 
+
+  }
+  #consns{
+    margin-top: 16px;
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+    transform:rotateZ(0.03deg);
+  }
+.konp{
+  font-size: 14px;
+}
+  .menup .sitasen{
+      text-decoration: none;
+  }
+  #footera{
+    margin-left: 1em;
+  }
+
+
+/*pankuzurisuto*/
+  .container {
+    margin-bottom: 30px;
+  }
+  
+  .breadcrumb {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+/*konatac*/
+#konataimg{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+  /*kiseki*/
+  .kiseki{
+    background-image: url(../kanatakanataimg/haikeikana.png);
+    background-repeat: repeat;
+    background-size: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+   
+    
+  }
+
+.kisekidiv{
+  display: block;
+  gap: 0%;
+}
+.dougakiseki{
+  width: 100%;
+height: auto;
+aspect-ratio: 16 / 9;
+}
+.markerdiv{
+  left: -9%;
+
+}
+.timeline-marker {
+  width: 20px;
+  height: 20px;
+}
+.tatesen-marker{
+  top: 20px;
+  width: 3px;
+  height: 900px;
+
+}
+.timeline {
+  margin-left: 0;
+
+}
+
+.timeline-item h3 {
+  font-weight: 600;
+  font-size: 20px;
+  
+}
+
+.timeline-item p {
+  margin-top: 8px;
+  margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0;
+    transform:rotateZ(0.03deg);
+
+}
+
+/*puraibasi*/
+.praibasih3{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
+
+}
+.praibasip{
+
+  font-size: 16px;
+
+}
+
+/*otoiawase*/
+.Form {
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.charmp{
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  transform:rotateZ(0.03deg);
+
+}
+.toiawasep{
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+
+  text-align: center;
+  margin-bottom: 8px;
+  
+}
+.toiawasetwp{
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+
+
+}
+
+
+
+
+
+/*index responsibdezain*/
+@media screen and (max-width: 480px){
+  
+  body{
+    width: 100%;
+    margin: 0;
+  
+  }
+  img {
+    width: 100% ;
+    }
+  .yokohaba{
+    width: 88%;}
+  .topdiv{
+     width:100%;
+
+  }
+  .titlelogo{
+    height:auto;
+    width: auto;
+  }
+.title{
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+#subtitle{
+  margin-top: 0;
+}
+
+.slideMenu{
+  opacity: 0;
+  
+}
+  .slide-wrapper {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+  .slide div:nth-of-type(1){ /* 背景画像 */
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+  .slide div:nth-of-type(2){ /* 背景画像 */
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+  .slide div:nth-of-type(3){ /* 背景画像 */
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+
+  .header_title {
+   margin-bottom: 12px;
+    
+  }
+
+  .hikousikilogo{
+    padding-left: 0;
+    width: auto;
+    height: 8vh;
+    margin-bottom: 20px;
+  }
+  .menu-btn {
+    display: block;
+    width: 58px;
+    height: 58px;
+    margin: auto;
+}
+
+.topdiv {
+  position: fixed;
+  overflow:hidden;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: block;
+  background-color: #fff;
+  padding-top: 60px;
+  margin: 0 0 0 auto;
+}
+
+.topdiv.open {
+  transform: translateX(0);
+  height: 100vh;
+  width: 70%;
+  overflow: hidden;
+  margin: 0 0 0 auto;
+}
+
+.headerul{
+  gap:18px ;
+  flex-direction: column;
+}
+
+.navli {
+    margin: 0 auto;
+}
+.navli .nav_btn {
+  font-size: 22px;
+  position: relative; /* ::after が absolute なので、これを指定しないと期待通りに動かないことがあります */
+}
+#puraibasi{
+  display: block !important;
+}
+
+/*プロフィール*/
+.profile{
+  padding-top: 10vh;
+    background-size: auto;
+}
+.helloaisatu{
+  margin-top: 10px;
+  margin-bottom: -20px;
+
+}
+#hei{
+  display: block;
+  font-size: 20px;
+}
+.waku{width: 100%;}
+.profilename{
+  font-size: 34px;
+}
+
+.name{
+  margin-bottom: 10px;
+}
+.kana{
+  font-size: 0.8rem;
+  margin-top: -6px;
+}
+#kanadiv{
+  display: block;
+}
+#kanadivtw{
+  display: none;
+}
+
+  .profilediv{
+    display: flex;
+    flex-wrap: column;
+    display: block;
+    width: 100%;
+
+    gap: 0;
+    margin: 0;
+  }
+  .profileone{
+    width: 100%;
+    margin: 0 auto;
+    order: 2;
+    display: block;
+  }
+
+.profileimgone::after
+ {
+  width: 100%;
+  height: 100%;
+
+}
+.profilep{
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  transform:rotateZ(0.03deg);
+
+
+}
+
+.profileimg{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.rinkdiv{
+  margin-top: 0;
+  display: none;
+}
+.btn a {
+  width: 120px;
+
+}
+.profileimgtwo{
+    width:100%;
+    order: 1;
+}
+.tabletw{
+  margin-left: 0px;
+}
+
+th,td {
+  padding: 4px;      /* 余白指定 */
+}
+.profileul {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(4,25%);
+  list-style: none;
+  padding: 0;
+}
+.image-container {
+  width: auto;
+  max-height:14vw;
+  overflow:hidden;
+  margin: 5%;
+}
+
+.profilejyun{
+  display:grid;
+}
+
+.profileisyoudiv{
+  grid-row:1/2;
+  margin-top: 12px;
+}
+
+.teble{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+th{
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+
+}
+td{
+  font-weight: 500;
+  font-size: 12px;
+}
+
+
+/*魅力*/
+.miryoku{
+  
+  background-size: auto;
+  padding-bottom: 94px;
+}
+.charmdiv{
+  display: block;;
+
+}
+.charm {
+
+  font-size: 22px;
+
+}
+.charmdivp{
+  width: 100%;
+}
+.charmdougadiv{
+  display: block;
+  padding-top: 0;
+}
+.douga{
+  opacity: 0;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+ }
+.charmtitle{
+  margin-bottom: 40px;
+}
+.charmp{
+
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0;
+  transform:rotateZ(0.03deg);
+
+}
+
+
+/*楽曲*/
+figure{
+  width: auto;
+  height: auto;
+}
+.gakkyoku{
+  padding-top: 0;
+  background-size: auto;
+}
+
+.gakkyokutopdiv {
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* 必須 */
+  margin: 0 auto;
+  align-items: stretch; /* 子要素の高さを揃える */
+
+  margin: 0;
+  width: 100%;
+gap: 12px;
+}
+
+.card-box {
+  margin-top: 10px;
+  margin-bottom: 00px;
+  width: 47%;
+  min-width: auto;
+  flex-grow: 1;
+}
+
+.card-box .gakkyokudiv {
+  padding:11px;
+}
+.kyoku{
+  font-weight: 600;
+  font-size: 0.65rem;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-align:center;
+  height:20px;
+  line-height:20px;
+}
+.gakkyokutitle{
+
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+/*イベント*/
+.ibent{
+  padding-top: 0;
+  padding-bottom: 120px;
+    background-size: auto;
+  }
+  .ibenttopdiv {
+    display: block;
+    
+  }
+  
+  .ibenttopdiv{
+  grid-template-columns: 1fr  1fr;
+
+  padding-top: 10px;
+  overflow:hidden;
+  }
+  .ibent-box {
+    width:100%;
+    padding-bottom: 16px;
+    margin: 0 auto;
+  }
+  .ibent-box .ibentdiv {
+    padding:12px;
+  }
+  .ibenttitle{
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    transform:rotateZ(0.03deg);
+  }
+.ibentfigure{
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  border-radius: 2%;
+}
+
+/*rink*/
+.rink{
+
+  padding-top: 0;
+  padding-bottom: 104px;
+  display: block;
+}
+.snstw{
+  opacity: 0;
+  display: block;
+}
+.btn a {
+  width: 100%;
+}
+.btn a {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.btn-slide-horizontal{
+  margin-top: 10px;
+}
+.snsdiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+
+/*更新履歴*/
+.kousin{
+  padding-top: 0;
+  padding-bottom: 120px;
+  background-size: auto;
+}
+  .kousindiv{
+    width: 100%;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .newsdt{
+    gap: 4%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;}
+/*フッター*/
+footer{
+
+  padding-top: 30px;
+  padding-bottom: 20px;
+  position: relative;  /* または absolute/fixed/sticky でも可 */
+  z-index: 1000;       /* 数字が大きいほど上に表示される */
+}
+.footerlogo{
+
+  display: block;
+  margin: 18px auto;
+  height: 8vh !important;
+  width: auto;
+}
+  .footerdiv{
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0%;
+  }
+  .footeronediv{
+    display: flex;
+  }
+
+  .footerfodiv{
+    margin-top: 2px;
+    display: block;
+    gap:8%;
+  }
+  /*
+  .footerspan{
+    display: none;
+  }
+    */
+
+  .footertwodiv{
+    order: 2;
+    width: 100%;
+  }
+  .footerthdiv{
+    order: 1;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .footerp{
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    margin-top: 6px;
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+  .footermenu{
+
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    margin-bottom: 6px;
+    transform:rotateZ(0.03deg);
+  }
+  .menup{
+    margin-top: 8px;
+
+    padding-bottom: 2px;
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    transform:rotateZ(0.03deg);
+    border-bottom:1px solid #fff; 
+
+  }
+  #consns{
+    margin-top: 16px;
+    font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    text-align: center;
+    transform:rotateZ(0.03deg);
+  }
+  .menup .sitasen{
+      text-decoration: none;
+  }
+  #footera{
+    margin-left: 1em;
+  }
+
+
+/*pankuzurisuto*/
+.container {
+  margin-bottom: 30px;
+}
+
+.breadcrumb {
+  font-size: 10px;
+  gap: 6px;
+}
+
+
+  /*kiseki*/
+  .kiseki{
+    background-image: url(../kanataimg/haikeikana.png);
+    background-repeat: repeat;
+    background-size: auto;
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+.kisekidiv{
+  display: block;
+  gap: 0%;
+}
+.markerdiv{
+  left: -9%;
+
+}
+.timeline-marker {
+  width: 18px;
+  height: 18px;
+
+}
+.tatesen-marker{
+  top: 20px;
+  width: 3px;
+  height: 600px;
+
+}
+.timeline {
+  margin-left: 0;
+
+}
+
+.timeline-item h3 {
+  font-weight: 600;
+  font-size: 20px;
+  
+}
+
+.timeline-item p {
+  margin-top: 6px;
+  margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0;
+    transform:rotateZ(0.03deg);
+
+}
+
+/*puraibasi*/
+.praibasih3{
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+.praibasip{
+  font-size: 14px;
+}
+
+/*otoiawase*/
+.Form {
+  font-family: "IBM Plex Sans JP","M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.toiawasep{
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 8px;
+  
+}
+.toiawasetwp{
+  font-weight: 500;
+  font-size: 15px;
+}
+}
